@@ -1,4 +1,6 @@
 # MazeSolver by Pineapple Pizza
+## Personnel
+Brian Lee, Erik Mai
 
 ## Statement of the problem
 Returns the boolean value of the statement "There exists one path through a maze starting at a designated beginning, and ending at a treasure.
