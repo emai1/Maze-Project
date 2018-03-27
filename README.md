@@ -1,7 +1,8 @@
-# Maze-Project
+# MazeSolver by Pineapple Pizza
 
 ## Statement of the problem
 Returns the boolean value of the statement "There exists one path through a maze starting at a designated beginning, and ending at a treasure.
+
 Definition: Maze - A grid with barriers
 Looping is disallowed: Each position can be reached at most once.
 
