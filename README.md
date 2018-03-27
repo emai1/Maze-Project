@@ -11,6 +11,9 @@ Looping is disallowed: Each position can be reached at most once.
 ## Recursive Abstraction
 When I am asked to ( Statement of the problem ), the recursive abstraction can ( Statement of the problem ) after I have moved one position.
 
+## Base case
+If you are at the treasure, return true
+
 ## Pseudocode
 
 ```Java
@@ -23,6 +26,8 @@ else
       invoke recursive abstraction  
     go back
 ```
+## Class(es), fields and methods
+
 ## Version Wishlist
 
 Version 0 - Find if treasure can be reached  
