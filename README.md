@@ -36,7 +36,6 @@ else
      - Constructor()
 2. Solver
    - Fields
-     - 
    - Methods
      - findSolution() : Checks for a possible solution to the maze
    
