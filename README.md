@@ -34,6 +34,11 @@ else
      - isLegal() / legalSteps() : Checks if the move made was legal / Finds all legal moves
      - toString()
      - Constructor()
+2. Solver
+   - Fields
+     - 
+   - Methods
+     - findSolution() : Checks for a possible solution to the maze
    
 ## Version Wishlist
 Version 0 - Find if treasure can be reached  
