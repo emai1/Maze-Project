@@ -20,10 +20,14 @@ if found treasure
   return True  
 else  
   get list of valid steps  
-    for each  
-      take the step  
-      invoke recursive abstraction  
-    go back
+    if there is a valid move
+      for each vaild move
+        take the step  
+        if recursive abstraction returns true
+          return true
+        go back
+    else
+      return false
 ```
 ## Class(es), fields and methods
 1. Maze
