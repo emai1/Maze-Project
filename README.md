@@ -15,7 +15,6 @@ When I am asked to ( Statement of the problem ), the recursive abstraction can (
 If you are at the treasure, return true
 
 ## Pseudocode
-
 ```Java
 if found treasure  
   return True  
@@ -27,9 +26,16 @@ else
     go back
 ```
 ## Class(es), fields and methods
-
+1. Maze
+   - Fields
+     - Visualization of the maze
+   - Methods
+     - step() : Takes a step in a specified direction
+     - isLegal() / legalSteps() : Checks if the move made was legal / Finds all legal moves
+     - toString()
+     - Constructor()
+   
 ## Version Wishlist
-
 Version 0 - Find if treasure can be reached  
 Version 1 - Find all possible paths  
 Version 2 - Find the shortest path  
