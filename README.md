@@ -12,7 +12,10 @@ Looping is disallowed: Each position can be reached at most once.
 When I am asked to ( Statement of the problem ), the recursive abstraction can ( Statement of the problem ) after I have moved one position.
 
 ## Base cases
-You are at the treasure, or there are no valid moves
+If you are at the treasure
+  return true
+If there are no valid moves
+  go back
 
 ## English or Pseudocode Description of Alhorithm
 ```Java
