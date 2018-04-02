@@ -2,7 +2,7 @@
 ## Personnel
 Brian Lee, Erik Mai
 
-## Statement of the problem
+## Statement of problem
 Returns the boolean value of the statement "There exists one path through a maze starting at a designated beginning, and ending at a treasure.
 
 Definition: Maze - A grid with barriers  
@@ -11,10 +11,10 @@ Looping is disallowed: Each position can be reached at most once.
 ## Recursive Abstraction
 When I am asked to ( Statement of the problem ), the recursive abstraction can ( Statement of the problem ) after I have moved one position.
 
-## Base case
+## Base cases
 You are at the treasure, or there are no valid moves
 
-## Pseudocode
+## English or Pseudocode Description of Alhorithm
 ```Java
 if found treasure  
   return True  
@@ -29,7 +29,7 @@ else
     else
       return false
 ```
-## Class(es), fields and methods
+## Class(es), with fields and methods
 1. Maze
    - Fields
      - Visualization of the maze
@@ -43,7 +43,7 @@ else
    - Methods
      - findSolution() : Checks for a possible solution to the maze
    
-## Version Wishlist
+## Version*n* Wishlist
 Version 0 - Find if treasure can be reached  
 Version 1 - Find all possible paths  
 Version 2 - Find the shortest path  
