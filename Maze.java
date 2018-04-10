@@ -1,4 +1,4 @@
-/**
+/*
   Represent a Maze with an Explorer in it
   
   A "MazeTerminal" is...
@@ -35,7 +35,7 @@ public class Maze {
     
     private Vector explorerPosition;  // see Vector inner class, below
 
-    /**
+    /*
       Construct an instance from the contents of a file.
       For v0, maze is rectangular, with every line having the same length.
      */
@@ -81,21 +81,26 @@ public class Maze {
     }
 
 
-    /**
+    /*
       Copy-construct an instance.
       Deep copy of all instance fields.
      */
     public Maze( Maze old) {
-
-        // Copy the explorer's position (code by Holmes is asserted to work)
         explorerPosition = new Vector( old.explorerPosition);
-
-        throw new java.lang.RuntimeException(
-            "Write code to copy the maze[][] array and rankCount.");
+        rankCount = old.rankCount;
+        maze = new int[rankCount][];
+        for (int rank = 0; rank < rankCount; rank++)
+        {
+            int fileCount = old.maze[rank].length;
+            maze[rank] = new int[fileCount];
+            for (int file = 0; file < fileCount; file++)
+            {
+                maze[rank][file] = old.maze[rank][file];
+            }
+        }
     }
 
-
-    /**
+    /*
       @return a string representing of this instance
      */
     public String toString() {
@@ -133,7 +138,7 @@ public class Maze {
     }
 
 
-    /**
+    /*
       Move the Explorer a step in the indicated direction.
       Attempting to position the explorer outside the maze means
       it has no position.
@@ -158,7 +163,7 @@ public class Maze {
     }
 
 
-    /**
+    /*
       Modify the maze to have @mazeElement in the explorer's position.
       Nix dropping treasure.
      */
@@ -168,7 +173,7 @@ public class Maze {
     }
 
 
-    /**
+    /*
       @return the MazeElement that the explorer is on.
               When the explorer's position is null, return WALL
               because the user-programmer's code is expected to benefit
@@ -180,7 +185,7 @@ public class Maze {
     }
 
 
-    /**
+    /*
        a pair of rank & file that can represent...
          o  a displacement from the current location
          o  a location in a maze, being a displacement from (0,0)
@@ -220,7 +225,7 @@ public class Maze {
         }
 
 
-        /**
+        /*
           @return whether this Vector matches the parameters
          */
         private boolean equals( int rank, int file) {

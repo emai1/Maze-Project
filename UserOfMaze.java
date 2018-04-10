@@ -1,4 +1,4 @@
-/**
+/*
   Test Maze class.
 
   Requires command line arguments:
@@ -25,7 +25,7 @@ public class UserOfMaze {
         // moveTest( maze);
         // dropTest( maze);
 
-         copyConstructTest( maze);
+        copyConstructTest( maze);
 
         // // test Displayer
         // displayer = new Displayer( Integer.parseInt( commandLine[3]));
@@ -35,7 +35,7 @@ public class UserOfMaze {
     }
 
 
-    /**
+    /*
       Move around a maze. Check the results.
       Run using a shell command like...
           java UserOfMaze mazes/intersection_treasureNorth.txt 1 1
@@ -72,7 +72,7 @@ public class UserOfMaze {
     }
 
 
-    /**
+    /*
       Drop maze elements. Check the results.
       Run using a shell command like...
           java UserOfMaze mazes/4cell_treasureWest.txt 0 1
@@ -96,7 +96,7 @@ public class UserOfMaze {
     }
 
 
-    /**
+    /*
       Copy-construct a new maze and check its independence
       from the original.
       Run using a shell command like...
@@ -109,6 +109,7 @@ public class UserOfMaze {
         // change the old
         old.go( Maze.NORTH);
         old.dropA( Maze.WALL);
+        old.go( Maze.NORTH);
         System.out.println(
                             "modified old" + System.lineSeparator()
                           + old + System.lineSeparator()
@@ -119,7 +120,6 @@ public class UserOfMaze {
         // change the copy
         copy.go( Maze.SOUTH);
         copy.go( Maze.WEST);
-        copy.dropA( Maze.STEPPING_STONE);
         System.out.println(
                             "modified copy" + System.lineSeparator()
                           + copy + System.lineSeparator()
@@ -129,7 +129,7 @@ public class UserOfMaze {
     }
 
 
-    /**
+    /*
       Display changes to a maze.
       Run by using the height of your shell window as a final argument, like...
           java UserOfMaze mazes/4cell_treasureWest.txt 0 3 25
@@ -147,7 +147,7 @@ public class UserOfMaze {
     }
 
 
-    /**
+    /*
       Demo the restore-from-snapshot paradigm.
       Run using a shell command like...
           java UserOfMaze mazes/4cell_treasureWest.txt 0 1
@@ -171,7 +171,7 @@ public class UserOfMaze {
         /* Expecting...
               modified candidate with no explorer
               ------
-              |0** |
+              |0* |
               ------
 
               unchanged snapshot
