@@ -24,12 +24,12 @@ if in treasure
   return True  
 else  
   save a snapshot
-    for each direction
-      go
-      if recursive abstraction
-        return True
-      restore to snapshot
-    return False
+  for each direction
+    go
+    if recursive abstraction
+      return True
+    restore to snapshot
+  return False
 ```
 ## Class(es), with fields and methods
 
