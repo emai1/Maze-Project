@@ -25,7 +25,7 @@ public class UserOfMaze {
         // moveTest( maze);
         // dropTest( maze);
 
-         copyConstructTest( maze);
+        // copyConstructTest( maze);
 
         // // test Displayer
         // displayer = new Displayer( Integer.parseInt( commandLine[3]));
@@ -153,20 +153,18 @@ public class UserOfMaze {
           java UserOfMaze mazes/4cell_treasureWest.txt 0 1
      */
     private static void snapshotDemo( Maze candidate) {
-
+		// Create a copy of @candidate, update @candidate
         Maze snapshot;
-
-        throw new java.lang.RuntimeException(
-            "Write code to take a snapshot of @candidate. "
-          + "Then, in @candidate, have the explorer go() out of the maze.");
-
-        // System.out.println(
-                            // "modified candidate with no explorer"
-                          // + System.lineSeparator()
-                          // + candidate + System.lineSeparator()
-                          // + "unchanged snapshot" + System.lineSeparator()
-                          // + snapshot + System.lineSeparator()
-                          // );
+		snapshot = new Maze(candidate);
+		candidate.go(Maze.NORTH);
+		
+        System.out.println(
+                            "modified candidate with no explorer"
+                          + System.lineSeparator()
+                          + candidate + System.lineSeparator()
+                          + "unchanged snapshot" + System.lineSeparator()
+                          + snapshot + System.lineSeparator()
+                          );
 
         /* Expecting...
               modified candidate with no explorer
@@ -179,16 +177,14 @@ public class UserOfMaze {
               |0e* |
               ------
          */
-
-        // throw new java.lang.RuntimeException(
-            // "Write code to undo the go() by making @candidate refer "
-          // + "to an unchanged copy of the maze.");
-
-        // System.out.println(
-                            // "restored candidate, with an explorer"
-                          // + System.lineSeparator()
-                          // + candidate + System.lineSeparator()
-                          // );
+		
+		// Restore @candidate to original state
+		candidate = snapshot;	
+        System.out.println(
+                            "restored candidate, with an explorer"
+                          + System.lineSeparator()
+                          + candidate + System.lineSeparator()
+                          );
         /* Expecting...
               restored candidate, with an explorer
               ------
