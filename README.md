@@ -13,42 +13,32 @@ When I am asked to ( Statement of the problem ), the recursive abstraction can (
 
 ## Base cases
 ```Java
-If you are at the treasure
-  return true
-If there are no valid moves
-  go back
+If the explorer is in a wall or a treasure
 ```
 
 ## English or Pseudocode Description of Alhorithm
 ```Java
-if found treasure  
+if in wall
+  return False
+if in treasure
   return True  
 else  
-  get list of valid steps  
-    if there is a valid move
-      for each vaild move
-        take the step  
-        if recursive abstraction returns true
-          return true
-        go back
-    else
-      return false
+  save a snapshot
+    for each direction
+      go
+      if recursive abstraction
+        return True
+      restore to snapshot
+    return False
 ```
 ## Class(es), with fields and methods
-1. Maze
-   - Fields
-     - Visualization of the maze
-   - Methods
-     - step() : Takes a step in a specified direction
-     - isLegal() / legalSteps() : Checks if the move made was legal / Finds all legal moves
-     - toString()
-     - Constructor()
-2. Solver
+
+Solver
    - Fields
    - Methods
      - findSolution() : Checks for a possible solution to the maze
    
-## Version*n* Wishlist
+## Version *n* Wishlist
 Version 0 - Find if treasure can be reached  
 Version 1 - Find all possible paths  
 Version 2 - Find the shortest path  
