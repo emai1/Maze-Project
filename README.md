@@ -3,7 +3,7 @@
 Brian Lee, Erik Mai
 
 ## Statement of problem
-Returns the boolean value of the statement "There exists one path through a maze starting at a designated beginning, and ending at a treasure.
+Return the boolean value of the statement "There exists one path through a maze starting at a designated beginning, and ending at a treasure."
 
 Definition: Maze - A grid with barriers  
 Looping is disallowed: Each position can be reached at most once.
@@ -13,10 +13,11 @@ When I am asked to ( Statement of the problem ), the recursive abstraction can (
 
 ## Base cases
 ```Java
-If the explorer is in a wall or a treasure
+If the explorer is in a wall, return false
+If the explorer is at the treasure, return true.
 ```
 
-## English or Pseudocode Description of Alhorithm
+## English or Pseudocode Description of Algorithm
 ```Java
 if in wall
   return False
@@ -28,7 +29,8 @@ else
     go
     if recursive abstraction
       return True
-    restore to snapshot
+    else
+      restore to snapshot
   return False
 ```
 ## Class(es), with fields and methods
