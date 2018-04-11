@@ -39,7 +39,9 @@ Solver
    - Fields
    - Methods
      - findSolution() : Checks for a possible solution to the maze
-   
+
+## Known Bugs
+
 ## Version *n* Wishlist
 Version 0 - Find if treasure can be reached  
 Version 1 - Find all possible paths  
