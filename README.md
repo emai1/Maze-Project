@@ -26,7 +26,7 @@ if in treasure
 else  
   save a snapshot
   for each direction
-    go
+    go forward one position
     if recursive abstraction
       return True
     else
