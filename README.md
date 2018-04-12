@@ -42,6 +42,8 @@ Solver
 
 ## Known Bugs
 
+If the initial position of the explorer is outside the maze, a NullPointerException will arise.
+
 ## Version *n* Wishlist
 Version 0 - Find if treasure can be reached  
 Version 1 - Find all possible paths  
