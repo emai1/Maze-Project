@@ -7,10 +7,10 @@ public class UserOfMazeSolver {
     
     public static void main(String[] args) throws java.io.FileNotFoundException {
 
-        // System.out.println("=====Base Case Tests=====");
+        System.out.println("=====Base Case Tests=====");
 
-        // test("mazes\\4cell_treasureWest.txt", 0, 3, false);
-        // test("mazes\\4cell_treasureWest.txt", 0, 0, true);
+        test("mazes/4cell_treasureWest.txt", 0, 3, false);
+        test("mazes/4cell_treasureWest.txt", 0, 0, true);
 
         System.out.println("=====Recursive Case Tests=====");
 
