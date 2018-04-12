@@ -14,18 +14,18 @@ public class UserOfMaze {
 
     public static void main(String[] commandLine)
        throws java.io.FileNotFoundException {
-        System.out.println();
+        System.out.println(commandLine[0]);
 
         Maze maze = new Maze( commandLine[0]
                             , Integer.parseInt( commandLine[1])
                             , Integer.parseInt( commandLine[2])
                             );
-        System.out.println( maze + System.lineSeparator());
+        // System.out.println( maze + System.lineSeparator());
 
         // moveTest( maze);
         // dropTest( maze);
 
-        // copyConstructTest( maze);
+        copyConstructTest( maze);
 
         // // test Displayer
         // displayer = new Displayer( Integer.parseInt( commandLine[3]));
