@@ -34,11 +34,13 @@ else
   return False
 ```
 ## Class(es), with fields and methods
-
-Solver
+MazeSolver
    - Fields
+     - maze: the Maze to be solved
+     - direction: an array of the possible directions to move in
    - Methods
-     - findSolution() : Checks for a possible solution to the maze
+     - solve() : Checks for a possible solution to the maze
+     - constructor
 
 ## Known Bugs
 
