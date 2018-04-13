@@ -19,8 +19,8 @@ public class UserOfMazeSolver {
         test("mazes/4cell_treasureWest.txt", 0, 1, true);
         test("mazes/intersection_noTreasure.txt", 1, 1, false);
         test("mazes/intersection_treasureNorth.txt", 1, 1, true);
-        test("mazes/largerMaze.txt", 0, 5, true);
-        test("mazes/hole.txt", 0, 0, false);
+        test("mazes/largerMaze.txt", 7, 15, true);
+        // test("mazes/hole.txt", 0, 0, false);
 
     }
 

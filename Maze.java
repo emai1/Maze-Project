@@ -86,7 +86,9 @@ public class Maze {
       Deep copy of all instance fields.
      */
     public Maze( Maze old) {
-        explorerPosition = new Vector( old.explorerPosition);
+        if (old.explorerPosition != null) {
+	        explorerPosition = new Vector( old.explorerPosition);
+        }
         rankCount = old.rankCount;
         maze = new int[rankCount][];
         for (int rank = 0; rank < rankCount; rank++)

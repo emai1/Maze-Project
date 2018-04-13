@@ -14,7 +14,8 @@ public class MazeSolver {
     }
 
     public boolean solve() {
-        System.out.println(maze);
+        //System.out.println(maze);
+
         // base cases
         if (maze.explorerIsOnA() == maze.TREASURE) {
             return true;
