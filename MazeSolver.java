@@ -6,15 +6,18 @@
 
 public class MazeSolver {
 
+    private Displayer displayer;
+    private final int console_height = 15;
     private Maze maze;
-    private int[] directions = {Maze.EAST, Maze.SOUTH, Maze.NORTH, Maze.WEST};
+    private final int[] directions = {Maze.EAST, Maze.SOUTH, Maze.NORTH, Maze.WEST};
 
     public MazeSolver(Maze input) {
         maze = new Maze(input);
+        displayer = new Displayer(console_height);
     }
 
     public boolean solve() {
-        //System.out.println(maze);
+        displayer.atTopOfWindow(maze.toString());
 
         // base cases
         if (maze.explorerIsOnA() == maze.TREASURE) {
@@ -29,7 +32,6 @@ public class MazeSolver {
         Maze snapshot = new Maze(maze);
         
         for (int direction : directions) {
-            System.out.println(maze); // TODO: use Displayer here
             maze.go(direction);
             if (solve()){
                 return true;

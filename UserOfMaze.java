@@ -12,7 +12,7 @@
 public class UserOfMaze {
     private static Displayer displayer;
 
-    public static void main(String[] commandLine) {
+    public static void main(String[] commandLine) throws java.io.FileNotFoundException { // TODO: catch the exception
         System.out.println(commandLine[0]);
 
         Maze maze = new Maze( commandLine[0]
@@ -27,8 +27,8 @@ public class UserOfMaze {
         // copyConstructTest( maze);
 
         // // test Displayer
-        // displayer = new Displayer( Integer.parseInt( commandLine[3]));
-        // displayerTest( maze);
+        displayer = new Displayer( Integer.parseInt( commandLine[3]));
+        displayerTest( maze);
 
         // snapshotDemo( maze);
     }
