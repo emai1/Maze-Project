@@ -20,7 +20,7 @@ public class UserOfMazeSolver {
         test("mazes/intersection_noTreasure.txt", 1, 1, false);
         test("mazes/intersection_treasureNorth.txt", 1, 1, true);
         test("mazes/largerMaze.txt", 7, 15, true);
-        // test("mazes/hole.txt", 0, 0, false);
+        test("mazes/hole.txt", 0, 0, false);
 
     }
 
