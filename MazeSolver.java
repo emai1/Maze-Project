@@ -29,6 +29,7 @@ public class MazeSolver {
         Maze snapshot = new Maze(maze);
         
         for (int direction : directions) {
+            System.out.println(maze); // TODO: use Displayer here
             maze.go(direction);
             if (solve()){
                 return true;

@@ -41,47 +41,41 @@ public class Maze {
      */
     public Maze( String sourceFilename
                , int explorerRank, int explorerFile
-               ) {
+               ) throws java.io.FileNotFoundException {
 
         /* Construct the maze array one rank at a time, in case
            we ever allow non-rectangular mazes  */
         maze = new int[ MAX_RANKS][];
 
-        try {
-            Scanner sc = new Scanner( new java.io.File( sourceFilename));
-            sc.useDelimiter("");  // Whitespaces are data, not delimiters.
+        Scanner sc = new Scanner( new java.io.File( sourceFilename));
+        sc.useDelimiter("");  // Whitespaces are data, not delimiters.
 
-            // process the maze file
-            while( sc.hasNextLine() ) {
-                int rank = rankCount++;
-                /* So rankCount == last rank +1, as usual.
-                   That is, rankCount is one larger than the number of
-                   the last-used rank.
-                 */
-                String line = sc.nextLine();
-                // System.out.println( "|" + line + "|");
-                
-                maze[ rank] = new int[ line.length()];
-
-                // Convert the input line into maze elements.
-                for( int file = 0; file < line.length(); file++ ) {
-                    String inChar = line.substring( file, file+1);
-                    int element;  // value destined for maze array
-                    if(      inChar.equals("0"))  element = TREASURE;
-                    else if( inChar.equals("*"))  element = STEPPING_STONE;
-                    // spaces and unrecognised characters are walls
-                    else                          element = WALL;
-                    maze[ rank][ file] = element;
-                }
-            }
+        // process the maze file
+        while( sc.hasNextLine() ) {
+            int rank = rankCount++;
+            /* So rankCount == last rank +1, as usual.
+               That is, rankCount is one larger than the number of
+               the last-used rank.
+             */
+            String line = sc.nextLine();
+            // System.out.println( "|" + line + "|");
             
-            explorerPosition = new Vector().add( explorerRank, explorerFile);
+            maze[ rank] = new int[ line.length()];
+
+            // Convert the input line into maze elements.
+            for( int file = 0; file < line.length(); file++ ) {
+                String inChar = line.substring( file, file+1);
+                int element;  // value destined for maze array
+                if(      inChar.equals("0"))  element = TREASURE;
+                else if( inChar.equals("*"))  element = STEPPING_STONE;
+                // spaces and unrecognised characters are walls
+                else                          element = WALL;
+                maze[ rank][ file] = element;
+            }
         }
-        catch (java.io.FileNotFoundException e) {
-            maze[0] = new int[]{WALL};
-            explorerPosition = new Vector();
-            rankCount = 1;
-        }
+        
+        explorerPosition = new Vector().add( explorerRank, explorerFile);
+
         // // for debugging: report explorer's location
         // System.out.println( "explorer at " + explorerPosition.rank
                           // + ", " +           explorerPosition.file);

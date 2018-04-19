@@ -1,32 +1,37 @@
 /* 
     Class to test MazeSolver
+
+    v1
+    Now takes in input from console, handles non existant mazes
 */
 
 
 public class UserOfMazeSolver {
     
-    public static void main(String[] args) throws java.io.FileNotFoundException {
+    private static Maze maze;
 
-        System.out.println("=====Base Case Tests=====");
+    public static void main(String[] args){
+        java.util.Scanner console = new java.util.Scanner(System.in);
 
-        test("mazes/4cell_treasureWest.txt", 0, 3, false);
-        test("mazes/4cell_treasureWest.txt", 0, 0, true);
-        test("mazes/4cell_treasureWest.txt", 300, 300, false);
+        while (maze == null) {
+            System.out.println("Maze to solve:");
+            String path = console.next();
+            System.out.println("X-cor of starting position:");
+            int x = Integer.parseInt(console.next());
+            System.out.println("Y-cor of starting position:");
+            int y = Integer.parseInt(console.next());
 
-        System.out.println("=====Recursive Case Tests=====");
+            try {
+                maze = new Maze(path, x, y);
+            }
 
-        test("mazes/4cell_treasureWest.txt", 0, 2, true);
-        test("mazes/4cell_treasureWest.txt", 0, 1, true);
-        test("mazes/intersection_noTreasure.txt", 1, 1, false);
-        test("mazes/intersection_treasureNorth.txt", 1, 1, true);
-        test("mazes/largerMaze.txt", 7, 15, true);
-        test("mazes/hole.txt", 0, 0, false);
+            catch (java.io.FileNotFoundException e) {
+                System.out.println("Error: " + path + " could not be found.");
+            }
 
-    }
+        }
 
-    private static void test(String mazeName, int startRank, int startFile, boolean answer) throws java.io.FileNotFoundException {
-        Maze maze = new Maze(mazeName, startRank, startFile);
         MazeSolver solver = new MazeSolver(maze);
-        System.out.println(solver.solve() + ", should be " + answer);
+        System.out.println(solver.solve());
     }
 }
